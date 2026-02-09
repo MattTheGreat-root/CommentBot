@@ -19,9 +19,20 @@ if not TOKEN:
 if not RENDER_URL:
     raise RuntimeError("RENDER_EXTERNAL_URL is not set")
 
-TEXTS = [
-    "YOUR_TEXTS",
-]
+TEXT_FILE = "comments.txt"
+
+def load_texts(path: str) -> list[str]:
+    if not os.path.exists(path):
+        raise RuntimeError(f"{path} file not found")
+
+    with open(path, "r", encoding="utf-8") as f:
+        return [line.strip() for line in f if line.strip()]
+
+TEXTS = load_texts(TEXT_FILE)
+
+if not TEXTS:
+    raise RuntimeError("Text file is empty")
+
 
 app = Flask(__name__)
 
