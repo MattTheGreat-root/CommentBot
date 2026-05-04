@@ -1,5 +1,5 @@
 # CommentBot
-A simple design for a telegram bot that randomly replies to group chat members with desired text.
+A simple design for a telegram bot that randomly replies to group chat members with desired text to learn more about Telegram API.
 # Set Up
 Clone the repository with ``` git clone https://github.com/MattTheGreat-root/CommentBot.git ``` then ``` cd CommentBot ```
 ## Configure
